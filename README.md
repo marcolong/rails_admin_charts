@@ -1,5 +1,7 @@
 # RailsAdminCharts
 
+## NB: It's a dirty patch of the gem, to manage multiple graphs. Use at your own risk!
+
 ## Installation
 
 In your `Gemfile`, add the following dependency:
