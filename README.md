@@ -2,6 +2,9 @@
 
 ## NB: It's a dirty patch of the gem, to manage multiple graphs. Use at your own risk!
 
+In your model two methods added: self.graphs_data (array of data for each graph) and self.charts_type (array of chart type in the same order of the data array).
+
+
 ## Installation
 
 In your `Gemfile`, add the following dependency:
