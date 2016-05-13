@@ -1,7 +1,7 @@
 <script type="text/javascript">
   $(function () {
     var chart;
-    $(document).ready(function() {
+    $(document).ready(function () {
       chart = new Highcharts.Chart({
         chart: {
           <% if @abstract_model.model.charts_type[index] == "column" %>
@@ -23,6 +23,13 @@
           },
           <% if @abstract_model.model.xaxis == "datetime" %>
           type: 'datetime',
+          dateTimeLabelFormats: { // don't display the dummy year
+            month: '%b',
+            year: '%b'
+          },
+//          title: {
+//            text: 'Date'
+//          },
           <% elsif @abstract_model.model.chart_type == "pie" %>
           <% else %>
           categories: <%=raw @abstract_model.model.xaxis.to_json %>
@@ -35,6 +42,10 @@
 //                        text: 'Counts'
 //                    }
 //                },
+//        tooltip: {
+//          headerFormat: '<b>{series.name}</b><br>',
+////          pointFormat: '{point.x + 1:%e. %b}: {point.y:.2f} m'
+//        },
         <%#tooltip: {%>
         <%#formatter: function() {%>
         <%#return ''+%>
@@ -42,6 +53,11 @@
         <%#}%>
         <%#},%>
         plotOptions: {
+          line: {
+            dataLabels: {
+              enabled: true
+            }
+          },
           spline: {
             lineWidth: 4,
             states: {
