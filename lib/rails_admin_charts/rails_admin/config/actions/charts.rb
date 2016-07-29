@@ -34,7 +34,7 @@ module RailsAdmin
                 format.xls
                 format.csv do
                   response.headers['Content-Type'] = 'text/csv'
-                  response.headers['Content-Disposition'] = "attachment; filename=.#{@abstract_model.model.name.downcase}csv"
+                  response.headers['Content-Disposition'] = "attachment; filename=.#{@abstract_model.model.name.downcase}.csv"
                   render :template => "rails_admin/csv/#{@abstract_model.model.name.downcase}.csv.erb"
                 end
               end
