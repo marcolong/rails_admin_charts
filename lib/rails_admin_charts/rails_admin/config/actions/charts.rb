@@ -25,7 +25,7 @@ module RailsAdmin
               #     @abstract_model.model.sym_for_condition => params[:chart_form][:condition])
               #   render partial: "chart", formats: [:html], locals: {data: data, index: index}
               # end
-              render "charts"
+              render action: @action.template_name
             else
               respond_to do |format|
                 format.html do
