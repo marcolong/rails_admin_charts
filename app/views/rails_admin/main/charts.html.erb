@@ -19,6 +19,6 @@
 <BR>
 <% @abstract_model.model.graphs_data.each_with_index do |value, index| %>
   <div id="growth_rate_<%= index %>" style="min-width: 400px; height: 400px;">
-    <%= raw render 'chart', index: index, format: :js %>
+    <%= raw render 'chart', index: index, data: value, format: :js %>
   </div>
 <% end %>

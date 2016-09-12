@@ -82,10 +82,10 @@
         series: [{
           type: 'pie',
           name: '<%= @abstract_model.model.names[index] %>',
-          data: <%=raw @abstract_model.model.graphs_data[index].to_json %>
+          data: <%=raw data.to_json %>
         }],
         <% else %>
-        series: <%=raw @abstract_model.model.graphs_data[index].to_json %>,
+        series: <%=raw data.to_json %>,
         <% end %>
         navigation: {
           menuItemStyle: {
